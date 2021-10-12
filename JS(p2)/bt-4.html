@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="text"></p>
+    <script type="text/javascript">
+        var array = ["ngay", "sinh", "nhât"];
+        var x = document.getElementById("text");
+        x.innerHTML = array;
+
+        if (Array.isArray(array)) {
+            x.innerHTML = ' đây là một mảng';
+        } else {
+            alert(x.innerHTML = ' không là một mảng');
+        }
+    </script>
+</body>
+
+</html>

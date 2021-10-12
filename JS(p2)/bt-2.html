@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function daymont() {
+            let date = new Date()
+            let textdate = date.getDay()
+            let sunday = new Date(date)
+
+            switch (textdate) {
+                case 0:
+                    sunday.setDate(date.getDate() + 7);
+                    alert(sunday)
+                    break;
+                case 1:
+                    sunday.setDate(date.getDate() + 6);
+                    alert(sunday)
+                    break;
+                case 2:
+                    sunday.setDate(date.getDate() + 5);
+                    alert(sunday)
+                    break;
+                case 3:
+                    sunday.setDate(date.getDate() + 4);
+                    alert(sunday)
+                    break;
+                case 4:
+                    sunday.setDate(date.getDate() + 3);
+                    alert(sunday)
+                    break;
+                case 5:
+                    sunday.setDate(date.getDate() + 2);
+                    alert(sunday)
+                    break;
+                case 6:
+                    sunday.setDate(date.getDate() + 1);
+                    alert(sunday)
+                    break;
+            }
+        }
+        daymont();
+    </script>
+</body>
+
+</html>
