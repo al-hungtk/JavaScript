@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="random1"></p>
+
+
+    <script>
+        function TaoSoNgauNhien(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        var a = TaoSoNgauNhien(1, 10);
+
+        document.getElementById("random1").innerHTML = a;
+    </script>
+
+</body>
+
+</html>

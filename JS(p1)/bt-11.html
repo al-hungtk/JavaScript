@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Validate Email</title>
+    <script type="text/javascript">
+        function checkEmail() {
+            var email = document.getElementById('email');
+            var filter = /\S+@\S+\.\S+/;
+            if (!filter.test(email.value)) {
+                alert(' dia chi email không hop le.\nExample@gmail.com');
+                email.focus;
+                return false;
+            } else {
+                alert('Email hợp lệ.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="form1" id="form1" method="post">
+        <input type="text" name="email" id="email" size="40">
+        <input type="button" name="check" value="Check" onclick="checkEmail();">
+    </form>
+</body>
+
+</html>
