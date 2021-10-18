@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Mock Project JavaScript</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="maytinh.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="box-calculator">
+        <div class="list">
+
+            <span class="time" id="hvn"></span>
+            <span class="pin">
+                <i class="fas fa-signal"></i>      
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </span>
+
+        </div>
+
+        <form name="form">
+            <input class="inputDisplay">
+            <input class="displaytotal">
+        </form>
+
+        <div class="calculator">
+
+            <table>
+
+                <tr class="row-1">
+                    <td><input type="button" value="AC" onclick="clearInput()"></td>
+                    <td><input type="button" value="+/-" onclick="numberCharacter()"></td>
+                    <td><input type="button" value="%" onclick="insertCharacter('%')"></td>
+                    <td><input type="button" value="/" onclick="insertCharacter('/')" style="color:#b36e71;"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="7" onclick="insertCharacter(7)"></td>
+                    <td><input type="button" value="8" onclick="insertCharacter(8)"></td>
+                    <td><input type="button" value="9" onclick="insertCharacter(9)"></td>
+                    <td><input type="button" value="x" onclick="insertCharacter('*')" style="color:#b36e71;"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="4" onclick="insertCharacter(4)"></td>
+                    <td><input type="button" value="5" onclick="insertCharacter(5)"></td>
+                    <td><input type="button" value="6" onclick="insertCharacter(6)"></td>
+                    <td><input type="button" value="-" onclick="insertCharacter('-')" style="color:#b36e71;"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="1" onclick="insertCharacter(1)"></td>
+                    <td><input type="button" value="2" onclick="insertCharacter(2)"></td>
+                    <td><input type="button" value="3" onclick="insertCharacter(3)"></td>
+                    <td><input type="button" value="+" onclick="insertCharacter('+')" style="color:#b36e71;"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="&#8634;" onclick="deleteCharacter()"></td>
+                    <td><input type="button" value="0" onclick="insertCharacter(0)"></td>
+                    <td><input type="button" value="." onclick="insertCharacter('.')"></td>
+                    <td><input type="button" value="=" onclick="result()"></td>
+                </tr>
+
+            </table>
+
+            <div class="bash"></div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="maytinh.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>
