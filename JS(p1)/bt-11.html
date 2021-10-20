@@ -7,13 +7,14 @@
     <script type="text/javascript">
         function checkEmail() {
             var email = document.getElementById('email');
-            var filter = /\S+@\S+\.\S+/;
+            var filter = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
             if (!filter.test(email.value)) {
                 alert(' dia chi email không hop le.\nExample@gmail.com');
                 email.focus;
                 return false;
             } else {
                 alert('Email hợp lệ.');
+                return true;
             }
         }
     </script>
