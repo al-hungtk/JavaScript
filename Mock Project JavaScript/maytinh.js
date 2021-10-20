@@ -24,37 +24,7 @@ function clearInput() { // xoá kết quả
 
 }
 
-function deleteCharacter() { // lùi lại
-    let currentValue = $('.inputDisplay').val();
-    $('.inputDisplay').val(currentValue.substring(0, currentValue.length - 1));
-}
-
-function numberCharacter() {
-    // $('.inputDisplay').val($('.inputDisplay').val() * (-1));
-    $('.displaytotal').val($('.displaytotal').val() * (-1));
-
-
-}
-
-function result() { // hiển thị và trả kết quả tính toán
-    let currentValue = $('.inputDisplay').val();
-    let length = currentValue.length;
-    let flag = false;
-    let char = currentValue[length - 1];
-    if (char == '+' || char == '-' || char == '*' || char == '/')
-        flag = true;
-    if (flag)
-        $('.displaytotal').val("ERROR!!!!");
-    else
-        $('.displaytotal').val(eval($('.inputDisplay').val()));
-}
-
-var today = new Date();
-var time = today.getHours() + ":" + today.getMinutes();
-document.getElementById("hvn").innerHTML = time;
-
-//-------------------------------------------------------------------------------------------------
-$("#positive").click(function() {
+$("#positive").click(function() { // xử lý âm dương
     let myScreen = $(".inputDisplay").val();
     let subString, checkCatch;
     if (isOperator(myScreen)) {
@@ -93,8 +63,8 @@ $("#positive").click(function() {
         $(".inputDisplay").val(positive(myScreen));
     }
 });
-//Get percent of number
-$("#dividepercent").click(function() {
+
+$("#dividepercent").click(function() { // chia phần trăm
     let myScreen = $(".inputDisplay").val();
     let subString, checkCatch;
     if (isOperator(myScreen)) {
@@ -117,6 +87,37 @@ $("#dividepercent").click(function() {
         $('.inputDisplay').val(dividepercent(myScreen));
     }
 });
+
+function deleteCharacter() { // lùi lại
+    let currentValue = $('.inputDisplay').val();
+    $('.inputDisplay').val(currentValue.substring(0, currentValue.length - 1));
+}
+
+function numberCharacter() {
+    $('.displaytotal').val($('.displaytotal').val() * (-1));
+
+
+}
+
+function result() { // hiển thị và trả kết quả tính toán
+    let currentValue = $('.inputDisplay').val();
+    let length = currentValue.length;
+    let flag = false;
+    let char = currentValue[length - 1];
+    if (char == '+' || char == '-' || char == '*' || char == '/')
+        flag = true;
+    if (flag)
+        $('.displaytotal').val("ERROR!!!!");
+    else
+        $('.displaytotal').val(eval($('.inputDisplay').val()));
+}
+
+var today = new Date(); // ngày giờ
+var time = today.getHours() + ":" + today.getMinutes();
+document.getElementById("hvn").innerHTML = time;
+
+
+
 isOperator = function(myScreen) {
     return myScreen.includes("-") || myScreen.includes("+") ||
         myScreen.includes("*") || myScreen.includes("/");
