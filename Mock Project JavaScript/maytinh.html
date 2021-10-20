@@ -17,8 +17,8 @@
 <body>
 
     <div class="box-calculator">
-        <div class="list">
 
+        <div class="list">
             <span class="time" id="hvn"></span>
             <span class="pin">
                 <i class="fas fa-signal"></i>      
@@ -29,8 +29,8 @@
         </div>
 
         <form name="form">
-            <input class="inputDisplay">
-            <input class="displaytotal">
+            <input class="inputDisplay" disabled>
+            <input class="displaytotal" value="0" disabled>
         </form>
 
         <div class="calculator">
@@ -39,8 +39,8 @@
 
                 <tr class="row-1">
                     <td><input type="button" value="AC" onclick="clearInput()"></td>
-                    <td><input type="button" value="+/-" onclick="numberCharacter()"></td>
-                    <td><input type="button" value="%" onclick="insertCharacter('%')"></td>
+                    <td><input type="button" id="positive" value="+/-" onclick="numberCharacter()"></td>
+                    <td><input type="button" id="dividepercent" value="%" onclick="percentCharacter()"></td>
                     <td><input type="button" value="/" onclick="insertCharacter('/')" style="color:#b36e71;"></td>
                 </tr>
 
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="maytinh.js"></script>
+    <script src="maytinh.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
