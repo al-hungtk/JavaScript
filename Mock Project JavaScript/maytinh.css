@@ -1,94 +1,96 @@
-    * {
-        margin: 0 auto;
-    }
-    
-    .box-calculator {
-        width: 420px;
-        background-color: #22252e;
-        border-radius: 8%;
-    }
-    
-    .display {
-        width: 370px;
-        height: 250px;
-    }
-    
-    .calculator {
-        height: 480px;
-        background-color: #2a2c38;
-        border-radius: 10%;
-        margin-top: 25px;
-    }
-    
-    table {
-        width: 370px;
-        height: 330px;
-    }
-    
-    .row-1 input[type="button"] {
-        color: #69d2c1;
-    }
-    
-    .inputDisplay {
-        height: 80px;
-        border-radius: 10px;
-        background-color: #22252e;
-        color: white;
-        border: none;
-        text-align: right;
-        font-size: 32px;
-        width: 380px;
-    }
-    
-    .displaytotal {
-        height: 80px;
-        border-radius: 10px;
-        background-color: #22252e;
-        color: white;
-        border: none;
-        margin-left: 82px;
-        text-align: right;
-        font-size: 45px;
-        font-weight: 500;
-        width: 300px;
-    }
-    
-    input[type="button"] {
-        width: 65px;
-        height: 65px;
-        margin: 10px;
-        background-color: #282b34;
-        border-radius: 20%;
-        color: white;
-        font-size: 25px;
-        font-weight: 700;
-    }
-    
-    .list {
-        padding: 10px;
-        height: 150px;
-    }
-    
-    .time {
-        color: white;
-        font-size: 21px;
-        margin: 16px 27px;
-    }
-    
-    .pin {
-        color: white;
-        width: 28%;
-        float: right;
-    }
-    
-    i {
-        margin: 2px;
-    }
-    
-    .bash {
-        width: 155px;
-        text-align: center;
-        background-color: #484b54;
-        height: 5px;
-        margin-top: 20px;
-    }
+* {
+    margin: auto;
+}
+
+.box-calculator {
+    width: 420px;
+    background-color: #22252e;
+    border-radius: 8%;
+    margin-top: 100px;
+}
+
+.display {
+    width: 370px;
+    height: 250px;
+}
+
+.calculator {
+    height: 480px;
+    background-color: #2a2c38;
+    border-radius: 10%;
+    margin-top: 25px;
+}
+
+table {
+    width: 370px;
+    height: 330px;
+}
+
+.row-1 input[type="button"] {
+    color: #69d2c1;
+}
+
+.inputDisplay {
+    height: 80px;
+    border-radius: 10px;
+    background-color: #22252e;
+    color: white;
+    border: none;
+    text-align: right;
+    font-size: 32px;
+    /* width: 235px; */
+    margin-left: 25px
+}
+
+.displaytotal {
+    height: 80px;
+    border-radius: 10px;
+    background-color: #22252e;
+    color: white;
+    border: none;
+    margin-left: 82px;
+    text-align: right;
+    font-size: 45px;
+    font-weight: 500;
+    width: 300px;
+}
+
+input[type="button"] {
+    width: 65px;
+    height: 65px;
+    margin: 10px;
+    background-color: #282b34;
+    border-radius: 20%;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.list {
+    padding: 10px;
+    height: 150px;
+}
+
+.time {
+    color: white;
+    font-size: 21px;
+    margin: 16px 27px;
+}
+
+.pin {
+    color: white;
+    width: 28%;
+    float: right;
+}
+
+i {
+    margin: 2px;
+}
+
+.bash {
+    width: 155px;
+    text-align: center;
+    background-color: #484b54;
+    height: 5px;
+    margin-top: 20px;
+}

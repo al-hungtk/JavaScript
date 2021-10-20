@@ -1,4 +1,4 @@
-function insertCharacter(char) {
+function insertCharacter(char) { // hàm xử lý  tính toán nhập vào
     let currentValue = $('.inputDisplay').val();
     let length = $('.inputDisplay').val().length;
     let flag = false;
@@ -20,7 +20,7 @@ function insertCharacter(char) {
 
 function clearInput() { // xoá kết quả 
     $('.inputDisplay').val('');
-    $('.displaytotal').val('');
+    $('.displaytotal').val('0');
 
 }
 
@@ -30,10 +30,13 @@ function deleteCharacter() { // lùi lại
 }
 
 function numberCharacter() {
-    $('.inputDisplay').val($('.inputDisplay').val() * (-1));
+    // $('.inputDisplay').val($('.inputDisplay').val() * (-1));
+    $('.displaytotal').val($('.displaytotal').val() * (-1));
+
+
 }
 
-function result() {
+function result() { // hiển thị và trả kết quả tính toán
     let currentValue = $('.inputDisplay').val();
     let length = currentValue.length;
     let flag = false;
@@ -48,5 +51,99 @@ function result() {
 
 var today = new Date();
 var time = today.getHours() + ":" + today.getMinutes();
-
 document.getElementById("hvn").innerHTML = time;
+
+//-------------------------------------------------------------------------------------------------
+$("#positive").click(function() {
+    let myScreen = $(".inputDisplay").val();
+    let subString, checkCatch;
+    if (isOperator(myScreen)) {
+        for (let i = 0; i < myScreen.length; i++) {
+            if (Spread(myScreen[myScreen.length - i], "*", "/")) {
+                subString = myScreen.substring(myScreen.length - i + 1, myScreen.length)
+                try {
+                    subString = positive(subString);
+                    $(".inputDisplay").val(myScreen.slice(0, myScreen.length - i + 1) + subString);
+                } catch (e) {
+                    checkCatch = evalCatch(e);
+                }
+                break;
+            } else if (Spread(myScreen[myScreen.length - i], "+", "-")) {
+                subString = myScreen.substring(myScreen.length - i, myScreen.length)
+                try {
+                    subString = positive(subString);
+                    if (subString > 0 && (sumopera(myScreen[myScreen.length - i - 1], "*", "/", "+"))) {
+                        subString = "+" + subString;
+                    }
+                    $(".inputDisplay").val(myScreen.slice(0, myScreen.length - i) + subString);
+                } catch (e) {
+                    checkCatch = evalCatch(e)
+                }
+                break;
+            } else if (myScreen[0] === "-" && sumOperator(myScreen) === 1) {
+                try {
+                    $(".inputDisplay").val(positive(myScreen));
+                } catch (e) {
+                    checkCatch = evalCatch(e)
+                }
+                break;
+            }
+        }
+    } else {
+        $(".inputDisplay").val(positive(myScreen));
+    }
+});
+//Get percent of number
+$("#dividepercent").click(function() {
+    let myScreen = $(".inputDisplay").val();
+    let subString, checkCatch;
+    if (isOperator(myScreen)) {
+        for (let i = 0; i < myScreen.length; i++) {
+            if (sumOperator(myScreen) === 1 && Spread2(myScreen[0])) {
+                $('.inputDisplay').val(dividepercent(myScreen));
+                break;
+            } else if (sumOperator(myScreen) >= 1 && Spread2(myScreen[myScreen.length - i])) {
+                subString = myScreen.substring(myScreen.length - i + 1, myScreen.length)
+                try {
+                    subString = dividepercent(subString);
+                    $(".inputDisplay").val(myScreen.slice(0, myScreen.length - i + 1) + subString);
+                } catch (e) {
+                    checkCatch = evalCatch(e);
+                }
+                break;
+            }
+        }
+    } else {
+        $('.inputDisplay').val(dividepercent(myScreen));
+    }
+});
+isOperator = function(myScreen) {
+    return myScreen.includes("-") || myScreen.includes("+") ||
+        myScreen.includes("*") || myScreen.includes("/");
+};
+Spread2 = function(value) {
+    return value === ("-") || value === ("+") || value === ("*") || value === ("/")
+
+}
+sumOperator = function(value) {
+    let num = 0;
+    for (let i = 0; i < value.length; i++) {
+        if (value[i] === ("-") || value[i] === ("+") || value[i] === ("*") || value[i] === ("/")) {
+            num += 1;
+        }
+    }
+    return num;
+};
+Spread = function(value, ope1, ope2) {
+    return value === (ope1) || value === (ope2)
+};
+sumopera = function(value, ope1, ope2, ope3) {
+    return value !== (ope1) && value !== (ope2) && value !== (ope3);
+};
+
+positive = function(myScreen) {
+    return eval(myScreen + "*(-1)");
+};
+dividepercent = function(myScreen) {
+    return eval(myScreen + "/100");
+};
